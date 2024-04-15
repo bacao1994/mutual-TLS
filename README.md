@@ -31,3 +31,6 @@
 ### Create PKCS#12 Keystores
 * `openssl pkcs12 -export -in server.pem -out keystore.p12 -name server -nodes -inkey server.key` export the certificate and the private key to a PKCS format key store which we can use to configure the Spring application with
 * `keytool -import -file ca.pem -alias ca -keystore truststore.p12`
+
+### Conclusion
+=> The partner side must send the provider side the CSR(Certificate Signing Requests), file **client.csr*. Then, the provider use the CA to sign and send back to partner the cert (file **client.pem**)
